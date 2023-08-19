@@ -13,14 +13,14 @@ function App(props) {
 
 function withSaludo(WrappedComponent) {
   return function WrappedComponentWithSaludo(saludo) {
-    function ComponenteDeVerdad(props) {
+    return function ComponenteDeVerdad(props) {
       return (
         <React.Fragment>
           <WrappedComponent {...props} saludo={saludo} />
           <p>Estamos acompañando al WrapperComponent</p>
         </React.Fragment>
       );
-    }
+    };
   };
 }
 
